@@ -3,7 +3,7 @@
 #include <dos.h>
 
 #define BASE_FREQUENCY 1193180
-#define NUMBER_OF_NOTES 16
+#define NUMBER_OF_NOTES 9
 
 void playSound();
 void showStatesWords();
