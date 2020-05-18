@@ -14,10 +14,10 @@ void interrupt newInt9(...)
 	unsigned char value = inp(0x60); //Получаем код возврата клавиши
 
 	if (value == 0x01) //Если нажата  Esc
-    escPressed = 1;
+    	escPressed = 1;
 
 	if (value == 0x10) //Если нажата Q
-    blinkingPaused = !blinkingPaused;
+    	blinkingPaused = !blinkingPaused;
 
 	doResend = !blinkingPaused && value != 0xFA; // (value != 0xFA) - если операция завершена c ошибкой и если моргание не на паузе
 
@@ -37,7 +37,7 @@ void setMask(char mask)
 		delay(50);
 	}
 
-    doResend = 1;
+    	doResend = 1;
 
 	while (doResend)
 	{
@@ -57,13 +57,13 @@ void main()
 	{
 		if (!blinkingPaused)
 		{
-           for (int i = 0; i < 3; i++)
-           {
-              setMask(indicatorsMask);
-			  delay(1000);
-			  setMask(0);
-			  delay(400);
-           }
+           		for (int i = 0; i < 3; i++)
+           		{
+              			setMask(indicatorsMask);
+			  	delay(1000);
+			  	setMask(0);
+			  	delay(400);
+          		 }
 		}
 	}
 
